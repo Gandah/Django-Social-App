@@ -1,0 +1,41 @@
+<!--gwitter/templates/users/dashboard.html-->
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="column is-one-third">
+    <div class="block">
+
+        <h2>
+            <strong>
+                Welcome, {{user.username| default:'To Gwitter'}}!
+            </strong>
+        </h2>
+        
+    </div>
+
+    <div>
+        {% if not user.is_authenticated %}
+            <div class="block">
+                <a href="{% url 'gwitter:register' %}" >Sign up for Gwitter!</a>
+            
+            </div>
+            <div class="block">
+                Already have an account?<a href="{% url 'gwitter:login' %}" > Sign in here</a>
+                
+            </div>         
+        {% else %}
+            <div class="block">
+                <a href="{% url 'gwitter:dashboard_v' %}">Proceed to Profile</a>
+            </div>
+            <div class="block">
+                <a href="{% url 'gwitter:password_change' %}">Change Password</a>
+            </div>
+            <a href="{% url 'gwitter:Signout_view' %}"> Sign Out</a>
+        {% endif %}
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+dwitter/
+│
+├── migrations/
+│
+├── templates/
+│   │
+│   ├── dwitter/
+│   │   └── profile_list.html
+│   │
+│   └── base.html
+│
+...
+└── views.py

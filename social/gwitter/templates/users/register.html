@@ -1,0 +1,36 @@
+<!--gwitter/templates/users/register.html-->
+<style>
+    label, input {
+        display: block;
+    }
+    span.helptext {
+        display: none;
+    }
+</style>
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="block">
+    <div class="block">
+        <h3>
+            <strong> 
+                Register
+            </strong>
+        </h3>
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="Register">
+    </form>  
+
+    <div class="block">
+        <a href="{% url 'gwitter:dashboard' %}">Back to login</a>
+    </div>
+</div>
+
+
+
+{% endblock %}
